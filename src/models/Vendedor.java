@@ -6,13 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Vendedor {
+public class Vendedor extends Funcionario {
 
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  private Long id;
+  private Long idvend;
   private Double comicao;
-  
+
 
   protected Vendedor() {}
 
@@ -23,12 +23,12 @@ public class Vendedor {
   @Override
   public String toString() {
     return String.format(
-        "Vendedor[id=%d, firstName='%s']",
-        id, comicao);
+            "Vendedor[id=%d, comicao=%d]",
+            idvend, comicao);
   }
 
-  public Long getId() {
-    return id;
+  public Long getIdvend() {
+    return idvend;
   }
 
   public Double getComicao() {
